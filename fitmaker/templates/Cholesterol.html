@@ -1,0 +1,196 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/Diabetes.css' %}">
+
+</head>
+
+<body>
+  <div>
+    <img src="../static/img/logo.png" alt="logo" class="logo">
+  </div>
+  <div class="nav">
+      <a href="{%url 'inputpage'%}"><button class="btn">Input page</button></a>
+      <a href="{%url 'diseases'%}"><button class="btn">Diseases</button></a>
+      <a href="{% url 'patients' %}"><button class="btn">Patients</button></a>
+      <a href="{%url 'change_password'%}"><button class="btn">change password</button></a>
+      <a href="{% url 'logout' %}"><button class="btn">Log out</button></a>
+  </div>
+
+
+    {% if user_measurement == 'normal' %}
+    <h2>You can eat any food but we are recomenting</h2>
+
+    <h2>Cholesterol Prevention Diet</h2>
+
+    <table border="1">
+        <tr>
+            <th>Category</th>
+            <th>Food Choices</th>
+        </tr>
+        <tr>
+            <td>Fruits and Vegetables</td>
+            <td>Eat a variety of colorful fruits and vegetables. Aim for at least 5 servings per day. They are rich in antioxidants and fiber. Examples: Berries, apples, broccoli, spinach, carrots.</td>
+        </tr>
+        <tr>
+            <td>Whole Grains</td>
+            <td>Choose whole grains over refined grains. Include oats, brown rice, quinoa, and whole wheat in your diet. They provide fiber, vitamins, and minerals.</td>
+        </tr>
+        <tr>
+            <td>Lean Proteins</td>
+            <td>Opt for lean protein sources to replace saturated fats. Examples include skinless poultry, fish, legumes, tofu, and low-fat dairy products.</td>
+        </tr>
+        <tr>
+            <td>Healthy Fats</td>
+            <td>Include sources of unsaturated fats, such as olive oil, avocados, nuts, and seeds. These can help improve cholesterol levels.</td>
+        </tr>
+        <tr>
+            <td>Fatty Fish</td>
+            <td>Incorporate fatty fish like salmon, mackerel, and trout, which are high in omega-3 fatty acids. Omega-3s can help lower triglycerides and protect the heart.</td>
+        </tr>
+        <tr>
+            <td>Limit Saturated Fats</td>
+            <td>Reduce intake of saturated fats found in red meat, full-fat dairy, and processed foods. Replace with healthier fats like olive oil or avocado.</td>
+        </tr>
+        <tr>
+            <td>Limit Trans Fats</td>
+            <td>Avoid trans fats found in many processed and packaged foods. Check labels for partially hydrogenated oils. Trans fats can raise LDL (bad) cholesterol.</td>
+        </tr>
+        <tr>
+            <td>High-Fiber Foods</td>
+            <td>Increase dietary fiber to help lower cholesterol levels. Choose whole fruits, vegetables, legumes, and whole grains.</td>
+        </tr>
+        <tr>
+            <td>Nuts and Seeds</td>
+            <td>Include nuts like almonds, walnuts, and seeds such as flaxseeds and chia seeds. They are rich in healthy fats, fiber, and antioxidants.</td>
+        </tr>
+        <tr>
+            <td>Plant Sterols</td>
+            <td>Foods fortified with plant sterols or stanols can help lower LDL cholesterol. These are found in certain margarines, orange juice, and yogurt.</td>
+        </tr>
+        <tr>
+            <td>Limit Added Sugars</td>
+            <td>Reduce the consumption of added sugars and sugary beverages, as they can contribute to weight gain and increased triglyceride levels.</td>
+        </tr>
+    </table>
+    {% endif %}
+{% if user_measurement == 'pre' %}
+<h2>Cholesterol Management - Food Choices</h2>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Good Choices</th>
+        <th>Bad Choices</th>
+    </tr>
+    <tr>
+        <td>Fruits and Vegetables</td>
+        <td>Berries (blueberries, strawberries)<br>Leafy greens (spinach, kale)<br>Apples, oranges, and pears</td>
+        <td>Fried vegetables<br>Creamed or cheesy vegetables<br>Canned fruits in syrup</td>
+    </tr>
+    <tr>
+        <td>Whole Grains</td>
+        <td>Oats (oatmeal, whole oats)<br>Brown rice, quinoa, whole wheat<br>Barley, bulgur</td>
+        <td>White bread and refined grains<br>Sugary cereals<br>Pastries, cakes, and cookies</td>
+    </tr>
+    <tr>
+        <td>Lean Proteins</td>
+        <td>Skinless poultry (chicken, turkey)<br>Fish (salmon, mackerel, trout)<br>Legumes (beans, lentils)</td>
+        <td>Processed meats (sausage, bacon, hot dogs)<br>Fatty cuts of red meat (beef, pork)<br>Fried or breaded proteins</td>
+    </tr>
+    <tr>
+        <td>Healthy Fats</td>
+        <td>Avocados, nuts, seeds<br>Olive oil, canola oil</td>
+        <td>Trans fats (found in many processed foods)<br>Deep-fried foods</td>
+    </tr>
+    <tr>
+        <td>Dairy</td>
+        <td>Low-fat or fat-free dairy products</td>
+        <td>Full-fat dairy (whole milk, cheese)</td>
+    </tr>
+    <tr>
+        <td>Snacks</td>
+        <td>Air-popped popcorn<br>Raw vegetables with hummus or yogurt dip</td>
+        <td>Potato chips and other fried snacks<br>Commercially baked snacks with trans fats</td>
+    </tr>
+    <tr>
+        <td>Beverages</td>
+        <td>Water, herbal tea<br>Green tea</td>
+        <td>Sugary drinks (sodas, fruit juices)<br>Full-fat dairy-based beverages</td>
+    </tr>
+</table>
+    {% endif %}
+
+    {% if user_measurement == 'patient' %}
+    <h2>Cholesterol Management Food Choices</h2>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Good Choices</th>
+          <th>Bad Choices</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fruits and Vegetables</td>
+          <td>Fresh fruits and vegetables</td>
+          <td>Fried vegetables</td>
+        </tr>
+        <tr>
+          <td>Whole Grains</td>
+          <td>Whole grains (oats, brown rice)</td>
+          <td>Refined grains (white bread, pastries)</td>
+        </tr>
+        <tr>
+          <td>Lean Proteins</td>
+          <td>Skinless poultry, fish, legumes</td>
+          <td>Processed meats (sausages, bacon)</td>
+        </tr>
+        <tr>
+          <td>Healthy Fats</td>
+          <td>Avocados, nuts, seeds, olive oil</td>
+          <td>Trans fats, hydrogenated oils</td>
+        </tr>
+        <tr>
+          <td>Dairy</td>
+          <td>Low-fat or fat-free dairy products</td>
+          <td>Full-fat dairy products</td>
+        </tr>
+        <tr>
+          <td>Fish</td>
+          <td>Fatty fish (salmon, mackerel)</td>
+          <td>Fried fish, processed fish products</td>
+        </tr>
+        <tr>
+          <td>Snacks</td>
+          <td>Nuts, seeds, air-popped popcorn</td>
+          <td>Potato chips, deep-fried snacks</td>
+        </tr>
+        <tr>
+          <td>Cooking Methods</td>
+          <td>Grilling, baking, steaming</td>
+          <td>Deep frying, pan-frying</td>
+        </tr>
+        <tr>
+          <td>Sweets</td>
+          <td>Dark chocolate (in moderation)</td>
+          <td>Sweets with trans fats and excessive sugar</td>
+        </tr>
+        <tr>
+          <td>Beverages</td>
+          <td>Water, herbal tea</td>
+          <td>Sugary beverages, excessive alcohol</td>
+        </tr>
+      </tbody>
+    </table>    {% endif %}
+
+</body>
+
+</html>

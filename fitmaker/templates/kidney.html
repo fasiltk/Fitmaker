@@ -1,0 +1,77 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/Diabetes.css' %}">
+</head>
+<body>
+    <div>
+        <img src="../static/img/logo.png" alt="logo" class="logo">
+      </div>
+        <div class="nav">
+        <a href="{%url 'inputpage'%}"><button class="btn">Input page</button></a>
+        <a href="{%url 'diseases'%}"><button class="btn">Diseases</button></a>
+        <a href="{% url 'patients' %}"><button class="btn">Patients</button></a>
+        <a href="{%url 'change_password'%}"><button class="btn">change password</button></a>
+        <a href="{% url 'logout' %}"><button class="btn">Log out</button></a>
+    </div>
+
+    <h2>Kidney Patients Exercise Guidelines</h2>
+
+<table border="1">
+    <tr>
+        <th>Type of Exercise</th>
+        <th>Can Kidney Patients Do?</th>
+        <th>Cannot Do</th>
+    </tr>
+    <tr>
+        <td>Low-impact Cardiovascular Exercise</td>
+        <td>Walking, cycling, swimming</td>
+        <td>High-impact activities like running or jumping</td>
+    </tr>
+    <tr>
+        <td>Strength Training</td>
+        <td>Light resistance training with proper form and supervision</td>
+        <td>Heavy lifting or intense strength training without medical approval</td>
+    </tr>
+    <tr>
+        <td>Flexibility Exercises</td>
+        <td>Gentle stretching and yoga</td>
+        <td>Overstretching or intense flexibility exercises</td>
+    </tr>
+    <tr>
+        <td>Aerobic Exercises</td>
+        <td>Moderate-intensity aerobic exercises</td>
+        <td>High-intensity exercises without medical approval</td>
+    </tr>
+    <tr>
+        <td>Breathing Exercises</td>
+        <td>Controlled breathing exercises</td>
+        <td>Strenuous breath-holding exercises or extreme deep breathing</td>
+    </tr>
+    <tr>
+        <td>Balance Exercises</td>
+        <td>Simple balance exercises with support</td>
+        <td>Complex or challenging balance exercises without supervision</td>
+    </tr>
+    <tr>
+        <td>Water Exercises</td>
+        <td>Swimming or water aerobics in consultation with a healthcare provider</td>
+        <td>Prolonged exposure to extremely hot or cold water</td>
+    </tr>
+    <tr>
+        <td>Anaerobic Exercises</td>
+        <td>Short bursts of activity with rest periods</td>
+        <td>Prolonged anaerobic exercises without medical guidance</td>
+    </tr>
+    <tr>
+        <td>Sports Activities</td>
+        <td>Low-intensity sports like golf or bowling</td>
+        <td>Contact sports or activities with a high risk of injury</td>
+    </tr>
+</table>
+</body>
+</html>

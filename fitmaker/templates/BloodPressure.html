@@ -1,0 +1,182 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/Diabetes.css' %}">
+
+</head>
+
+<body>
+  <div>
+    <img src="../static/img/logo.png" alt="logo" class="logo">
+  </div>
+  <div class="nav">
+      <a href="{%url 'inputpage'%}"><button class="btn">Input page</button></a>
+      <a href="{%url 'diseases'%}"><button class="btn">Diseases</button></a>
+      <a href="{% url 'patients' %}"><button class="btn">Patients</button></a>
+      <a href="{%url 'change_password'%}"><button class="btn">change password</button></a>
+      <a href="{% url 'logout' %}"><button class="btn">Log out</button></a>
+  </div>
+<div class="main">
+  {% if user_measurement == 'normal' %}
+  <h2>You can eat any food but we are recomenting</h2>
+  <h2>Blood Pressure-Friendly Diet</h2>
+
+  <table border="1">
+    <tr>
+      <th>Category</th>
+      <th>Recommended Foods</th>
+      <th>Limit or Avoid</th>
+    </tr>
+    <tr>
+      <td>Fruits and Vegetables</td>
+      <td>- Berries (e.g., blueberries, strawberries)<br>- Leafy greens (e.g., spinach, kale)<br>- Bananas, oranges,
+        melons</td>
+      <td>- Canned vegetables with added salt<br>- Pickled vegetables</td>
+    </tr>
+    <tr>
+      <td>Whole Grains</td>
+      <td>- Brown rice, quinoa, whole wheat<br>- Oats, barley, bulgur</td>
+      <td>- White bread, white rice<br>- Processed cereals high in sugar</td>
+    </tr>
+    <tr>
+      <td>Lean Proteins</td>
+      <td>- Skinless poultry, fish, tofu<br>- Legumes (e.g., beans, lentils)</td>
+      <td>- Processed meats (e.g., sausages)<br>- Fried or breaded meats</td>
+    </tr>
+    <tr>
+      <td>Healthy Fats</td>
+      <td>- Avocados, olive oil, nuts, seeds</td>
+      <td>- Trans fats (found in many processed and fried foods)</td>
+    </tr>
+    <tr>
+      <td>Dairy or Alternatives</td>
+      <td>- Low-fat or fat-free dairy products<br>- Fortified plant-based milk (e.g., almond, soy, oat milk)</td>
+      <td>- Full-fat dairy products<br>- Dairy products high in sodium</td>
+    </tr>
+    <tr>
+      <td>Snacks</td>
+      <td>- Fresh fruit, raw vegetables<br>- Unsalted nuts and seeds</td>
+      <td>- Salty snacks (chips, pretzels)<br>- Processed snack foods</td>
+    </tr>
+    <tr>
+      <td>Beverages</td>
+      <td>- Water, herbal tea, green tea</td>
+      <td>- Sugary drinks (sodas, energy drinks)<br>- Excessive caffeine</td>
+    </tr>
+  </table>
+  {% endif %}
+
+  {% if user_measurement == 'pre' %}
+  <h2>Good and Bad Foods for Blood Pressure</h2>
+
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Good Foods</th>
+      <th>Bad Foods</th>
+    </tr>
+    <tr>
+      <td>Fruits and Vegetables</td>
+      <td>Berries (e.g., blueberries, strawberries)<br>Leafy greens (e.g., spinach, kale)<br>Bananas</td>
+      <td>Canned fruits with added sugars<br>Pickles and sauerkraut<br>Salted vegetables (e.g., pickled beets)</td>
+    </tr>
+    <tr>
+      <td>Whole Grains</td>
+      <td>Quinoa<br>Brown rice<br>Oats</td>
+      <td>White bread and refined grains<br>Sugary cereals<br>Instant noodles</td>
+    </tr>
+    <tr>
+      <td>Lean Proteins</td>
+      <td>Fish (e.g., salmon, trout)<br>Skinless poultry<br>Legumes (e.g., lentils, chickpeas)</td>
+      <td>Processed meats (e.g., sausages, bacon)<br>Fried and breaded meats<br>High-sodium canned beans</td>
+    </tr>
+    <tr>
+      <td>Healthy Fats</td>
+      <td>Avocado<br>Olive oil<br>Nuts and seeds</td>
+      <td>Trans fats (found in many processed foods)<br>Margarine and hydrogenated oils<br>Deep-fried snacks</td>
+    </tr>
+    <tr>
+      <td>Dairy or Alternatives</td>
+      <td>Low-fat or fat-free dairy products<br>Unsweetened almond or soy milk<br>Cottage cheese</td>
+      <td>Full-fat dairy products<br>Flavored yogurt with added sugars<br>Processed cheese</td>
+    </tr>
+    <tr>
+      <td>Beverages</td>
+      <td>Water<br>Herbal tea<br>Low-sodium vegetable juice</td>
+      <td>Sugary drinks (e.g., soda, energy drinks)<br>Excessive caffeine<br>Alcohol in excess</td>
+    </tr>
+    <tr>
+      <td>Snacks</td>
+      <td>Fresh fruit<br>Air-popped popcorn<br>Greek yogurt with berries</td>
+      <td>Potato chips and salty snacks<br>Candies and sweets<br>Packaged snack cakes and pastries</td>
+    </tr>
+  </table>
+
+  <p>Remember, it's essential to maintain a well-balanced diet, control portion sizes, and limit sodium intake to help
+    manage blood pressure effectively. It's always a good idea to consult with a healthcare professional or a registered
+    dietitian for personalized advice based on individual health conditions and needs.</p>
+  {% endif %}
+
+  {% if user_measurement == 'patient' %}
+  <h2>Good and Bad Foods for Blood Pressure</h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Good for Blood Pressure</th>
+        <th>Bad for Blood Pressure</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fruits and Vegetables</td>
+        <td>Berries, bananas, leafy greens, tomatoes</td>
+        <td>Canned vegetables with added salt, pickles, processed fruit juices with added sugar</td>
+      </tr>
+      <tr>
+        <td>Whole Grains</td>
+        <td>Brown rice, quinoa, whole wheat bread</td>
+        <td>White rice, refined grains, sugary cereals</td>
+      </tr>
+      <tr>
+        <td>Lean Proteins</td>
+        <td>Skinless poultry, fish, legumes, tofu</td>
+        <td>Processed meats (bacon, sausages), fatty cuts of meat</td>
+      </tr>
+      <tr>
+        <td>Dairy</td>
+        <td>Low-fat or fat-free dairy products</td>
+        <td>Full-fat dairy products, ice cream</td>
+      </tr>
+      <tr>
+        <td>Nuts and Seeds</td>
+        <td>Almonds, walnuts, flaxseeds</td>
+        <td>Salted or honey-roasted nuts</td>
+      </tr>
+      <tr>
+        <td>Fats</td>
+        <td>Olive oil, avocados, fatty fish (salmon)</td>
+        <td>Trans fats (found in many processed and fried foods), excessive saturated fats</td>
+      </tr>
+      <tr>
+        <td>Sodium</td>
+        <td>Fresh herbs, spices, garlic</td>
+        <td>High-sodium processed foods, canned soups, salty snacks</td>
+      </tr>
+      <tr>
+        <td>Beverages</td>
+        <td>Water, herbal tea, moderate coffee</td>
+        <td>Sugary drinks, excessive caffeinated or alcoholic beverages</td>
+      </tr>
+    </tbody>
+  </table>
+  {% endif %}
+</div>
+
+</html>

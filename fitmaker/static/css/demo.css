@@ -1,0 +1,45 @@
+video {
+    width: 300px;
+    height: 300px;
+}
+
+body {
+    width: 1000px;
+}
+
+p {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+div {
+    margin: 10px;
+}
+
+.b {
+    display: flex;
+}
+.a{
+    display: flex;
+}
+.btn{
+    background-color: #333;
+    border-radius: 10px;
+    height: 35px;
+    cursor: pointer;
+    color: #fff;
+}
+.nav{
+    margin-left: 924px;
+    margin-top: -108px;
+    width: 411px;
+}
+.logo{
+    width: 80px;
+    height: 80px;
+    margin-top: 40px;
+    margin-left: 10px;
+    z-index: -1;
+    display: inline-block;
+}

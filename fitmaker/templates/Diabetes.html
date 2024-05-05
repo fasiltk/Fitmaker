@@ -1,0 +1,183 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/Diabetes.css' %}">
+
+</head>
+
+<body>
+    <div>
+        <img src="../static/img/logo.png" alt="logo" class="logo">
+      </div>
+        <div class="nav">
+        <a href="{%url 'inputpage'%}"><button class="btn">Input page</button></a>
+        <a href="{%url 'diseases'%}"><button class="btn">Diseases</button></a>
+        <a href="{% url 'patients' %}"><button class="btn">Patients</button></a>
+        <a href="{%url 'change_password'%}"><button class="btn">change password</button></a>
+        <a href="{% url 'logout' %}"><button class="btn">Log out</button></a>
+    </div>
+  
+    {% if user_measurement == 'normal' %}
+    <h2>You can eat any food but we are recomenting</h2>
+    <h2>Diet for Preventing Diabetes</h2>
+
+    <table>
+      <tr>
+        <th>Food Category</th>
+        <th>Recommended</th>
+        <th>Limit/Avoid</th>
+      </tr>
+      <tr>
+        <td>Vegetables</td>
+        <td>Include a variety of colorful, non-starchy vegetables.</td>
+        <td>Limit starchy vegetables like potatoes, corn, and peas.</td>
+      </tr>
+      <tr>
+        <td>Fruits</td>
+        <td>Choose whole fruits over juices.</td>
+        <td>Limit fruit juices and dried fruits (high in added sugars).</td>
+      </tr>
+      <tr>
+        <td>Whole Grains</td>
+        <td>Opt for whole grains like brown rice, quinoa, and oats.</td>
+        <td>Limit refined grains (white bread, white rice, sugary cereals).</td>
+      </tr>
+      <tr>
+        <td>Protein</td>
+        <td>Choose lean sources of protein (chicken, fish, tofu, legumes).</td>
+        <td>Limit red and processed meats. Watch portion sizes.</td>
+      </tr>
+      <tr>
+        <td>Dairy</td>
+        <td>Choose low-fat or fat-free options.</td>
+        <td>Limit full-fat dairy products.</td>
+      </tr>
+      <tr>
+        <td>Fats</td>
+        <td>Include healthy fats from sources like olive oil, avocados, and nuts.</td>
+        <td>Limit saturated fats and trans fats found in fried and processed foods.</td>
+      </tr>
+      <tr>
+        <td>Sweets and Snacks</td>
+        <td>Enjoy occasional treats in moderation.</td>
+        <td>Limit sugary snacks, desserts, and sugary beverages.</td>
+      </tr>
+      <tr>
+        <td>Beverages</td>
+        <td>Drink water, herbal teas, and unsweetened beverages.</td>
+        <td>Limit sugary drinks, including soda and energy drinks.</td>
+      </tr>
+    </table>
+  
+    <p>It's important to note that portion control, regular physical activity, and maintaining a healthy weight are also crucial factors in preventing diabetes. Additionally, individual dietary needs may vary, so it's advisable to consult with a healthcare professional or a registered dietitian for personalized advice based on specific health conditions and goals.</p>
+  
+    {% endif %}
+
+    {% if user_measurement == 'pre' %}
+    <h2>Diabetes Food Guide</h2>
+
+    <table border="1">
+        <tr>
+            <th>Category</th>
+            <th>Good Food Options</th>
+            <th>Limit or Avoid</th>
+        </tr>
+        <tr>
+            <td>Vegetables</td>
+            <td>Non-starchy vegetables (e.g., leafy greens, broccoli)</td>
+            <td>Starchy vegetables (e.g., potatoes, corn)</td>
+        </tr>
+        <tr>
+            <td>Fruits</td>
+            <td>Berries, apples, cherries</td>
+            <td>High-sugar fruits (e.g., watermelon, pineapple)</td>
+        </tr>
+        <tr>
+            <td>Whole Grains</td>
+            <td>Quinoa, brown rice, whole wheat</td>
+            <td>Refined grains (e.g., white bread, sugary cereals)</td>
+        </tr>
+        <tr>
+            <td>Proteins</td>
+            <td>Lean meats, fish, poultry, tofu</td>
+            <td>Processed meats (e.g., sausages, hot dogs)</td>
+        </tr>
+        <tr>
+            <td>Legumes</td>
+            <td>Lentils, chickpeas, black beans</td>
+            <td>Canned baked beans with added sugars</td>
+        </tr>
+        <tr>
+            <td>Dairy</td>
+            <td>Low-fat or fat-free dairy products</td>
+            <td>Full-fat dairy products, sweetened yogurts</td>
+        </tr>
+        <tr>
+            <td>Fats</td>
+            <td>Healthy fats (e.g., olive oil, avocados, nuts)</td>
+            <td>Trans fats (found in many processed and fried foods)</td>
+        </tr>
+        <tr>
+            <td>Sweets and Snacks</td>
+            <td>Nuts, seeds, dark chocolate (in moderation)</td>
+            <td>Sugary snacks, candies, pastries, sugary beverages</td>
+        </tr>
+        <tr>
+            <td>Beverages</td>
+            <td>Water, herbal tea, unsweetened almond milk</td>
+            <td>Sugary drinks, regular sodas, fruit juices</td>
+        </tr>
+    </table>
+    {% endif %}
+
+    {% if user_measurement == 'patient' %}
+    <h2>Diabetes Food Choices</h2>
+    <table border="1">
+        <tr>
+            <th>Category</th>
+            <th>Good Food Choices</th>
+            <th>Bad Food Choices</th>
+        </tr>
+        <tr>
+            <td>Carbohydrates</td>
+            <td>Whole grains (brown rice, quinoa, whole wheat)<br>Legumes (beans, lentils)<br>Non-starchy vegetables
+                (leafy greens, broccoli)</td>
+            <td>Refined grains (white rice, white bread, sugary cereals)<br>Sugary snacks and desserts<br>Sugary
+                beverages (sodas, sweetened juices)</td>
+        </tr>
+        <tr>
+            <td>Proteins</td>
+            <td>Lean proteins (chicken, turkey, fish, tofu)<br>Eggs<br>Greek yogurt (unsweetened)</td>
+            <td>Processed meats (sausages, hot dogs)<br>Breaded and fried proteins<br>Fatty cuts of meat</td>
+        </tr>
+        <tr>
+            <td>Fats</td>
+            <td>Healthy fats (avocado, nuts, olive oil)<br>Fatty fish (salmon, mackerel)</td>
+            <td>Trans fats (found in many processed and fried foods)<br>Full-fat dairy products</td>
+        </tr>
+        <tr>
+            <td>Snacks</td>
+            <td>Fresh fruits (in moderation)<br>Raw vegetables with hummus</td>
+            <td>Sugary snacks and candies<br>Chips and other fried snacks</td>
+        </tr>
+        <tr>
+            <td>Beverages</td>
+            <td>Water<br>Herbal tea (unsweetened)</td>
+            <td>Sugary drinks (sodas, energy drinks)<br>Sweetened coffee drinks</td>
+        </tr>
+        <tr>
+            <td>Desserts</td>
+            <td>Berries with a dollop of Greek yogurt<br>Dark chocolate (in moderation)</td>
+            <td>Regular ice cream<br>Pastries and cakes</td>
+        </tr>
+    </table>
+    {% endif %}
+
+</body>
+
+</html>

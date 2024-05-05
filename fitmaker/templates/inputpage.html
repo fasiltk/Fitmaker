@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/inputpage.css' %}">
+</head>
+<body>
+    <div>
+        <img src="../static/img/logo.png" alt="logo" class="logo">
+      </div>
+        <div class="side">
+        <h3>Hello, {{ username }}</h3>
+        <p>
+            When it comes to food items such as white rice, biryani, and similar dishes, it is worth noting that a single quantity refers to 100 grams. <br> <br>
+
+            When consuming countable food items such as idli, chapati, and so on, simply enter the specific number of items that have been consumed. <br> <br>
+            
+            When it comes to liquid food items such as water, cola, and alcohol, it's worth noting that a single serving is typically referred to as one glass.        </p>
+    </div>
+<div class="nav">
+        <a href="{% url 'diseases' %}"><button class="btn">Diseases</button></a>
+        <a href="{% url 'patients' %}"><button class="btn">Patients</button></a>
+        <a href="{%url 'change_password'%}"><button class="btn">change password</button></a>
+        <a href="{% url 'logout' %}"><button class="btn">Log out</button></a>
+
+    </div>
+    <div class="form">
+        <form id="myForm" action="/inputpage/" method="post"> 
+        {% csrf_token %}
+        <div id="inputContainer">
+            <div>
+                <input type="text" placeholder="Weight" class="personal" name="weight">
+            </div>
+            <div class="added-input-container" id="additionalInputs">
+                <input type="text" placeholder="Food item" class="added-input" name="fooditem[]">
+                <input type="text" placeholder="Quantity" class="added-input" name="quantity[]">
+                <input type="button" value="Add" onclick="addInputField();"> 
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="submit">
+    </form>
+    <script src="{% static 'js/inputpage.js' %}"></script>
+</div>
+</body>
+</html>

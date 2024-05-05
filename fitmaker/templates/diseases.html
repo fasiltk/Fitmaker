@@ -1,0 +1,89 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/diseases.css' %}">
+</head>
+<body>
+    <div>
+        <img src="../static/img/logo.png" alt="logo" class="logo">
+      </div>
+        <div class="nav">
+        <a href="{%url 'inputpage'%}"><button class="btn">Input page</button></a>
+        <a href="{% url 'patients' %}"><button class="btn">Patients</button></a>
+        <a href="{%url 'change_password'%}"><button class="btn">change password</button></a>
+        <a href="{% url 'logout' %}"><button class="btn">Log out</button></a>
+    </div>
+  
+    <div class="main">
+        <form action="/diseases/" method="post" id="diseaseForm">
+            {% csrf_token %}
+            <select name="diseases" id="diseases" onchange="updateOptions()">
+                <option value="Diabetes">Diabetes</option>
+                <option value="Cholesterol">Cholesterol</option>
+                <option value="BloodPressure">Blood Pressure</option>
+            </select>
+            <select name="measurement" id="measurement">
+                <!-- Options will be dynamically populated using JavaScript -->
+            </select>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    <div class="text">By selecting your specific disease and stage level, our system will provide you with a comprehensive list of foods you should and should not eat.
+        To get a better understanding of your concerns, it would be advisable to seek advice from a qualified doctor.</div>
+
+    <script>
+        function updateOptions() {
+            var selectedDisease = document.getElementById("diseases").value;
+            var measurementSelect = document.getElementById("measurement");
+
+            // Clear existing options
+            measurementSelect.innerHTML = "";
+
+            // Define options based on the selected disease
+            var options = [];
+            switch (selectedDisease) {
+                case "Diabetes":
+                    options = [
+                        { value: "normal", text: "100 mg/dL" },
+                        { value: "pre", text: "100 to 125 mg/dL" },
+                        { value: "patient", text: "126 mg/dL or more" }
+                    ];
+                    break;
+                case "Cholesterol":
+                    options = [
+                        { value: "normal", text: "200 mg/dL" },
+                        { value: "pre", text: "200 to 239 mg/dL" },
+                        { value: "patient", text: "240 mg/dL or more" }
+                    ];
+                    break;
+                case "BloodPressure":
+                    options = [
+                        { value: "pre", text: "90/60mmHg" },
+                        { value: "normal", text: "90/60mmHg to 120/80mmHg" },
+                        { value: "patient", text: "140/90mmHg or more" }
+                    ];
+                    break;
+                // Add cases for other diseases if needed
+
+                default:
+                    break;
+            }
+
+            // Populate measurementSelect with the new options
+            options.forEach(function(option) {
+                var optionElement = document.createElement("option");
+                optionElement.value = option.value;
+                optionElement.text = option.text;
+                measurementSelect.appendChild(optionElement);
+            });
+        }
+
+        // Call updateOptions initially to populate the measurement select with default values
+        updateOptions();
+    </script>
+</body>
+</html>

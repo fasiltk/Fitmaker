@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #90cad8;
+    /* background-image: url('https://drive.google.com/uc?export=download&id=1J6oYr_jwqPTx27ochpB2sxL5xVsN6L0z'); */
+    background-image: url("register.jpg");
+    background-repeat: repeat;
+    background-size: 1367px 770px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -30px;
+}
+
+.register {
+    background-color: rgb(38, 37, 37 ,0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 130px;
+}
+
+h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #03233b;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+.gender{
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(180, 190, 199, 0.1);
+}
+
+button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+#submit {
+    background-color: #0f2230;
+    margin: 10px;
+}
+
+a {
+    padding: 10px;
+    color: #08263d;
+    text-decoration: none;
+}
+.logo{
+    width: 80px;
+    height: 80px;
+    margin-top: 40px;
+    margin-left: 10px;
+    z-index: -1;
+    display: inline-block;
+}

@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: url('https://drive.google.com/uc?id=1tafVEAXpqYcA6LSh6F0RxuC8rhTWyOCE'); */
+    background-image: url("input.jpg");
+    background-size: 1365px 750px;
+    background-repeat:repeat;
+    display: flex;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color:rgba(43,130,36,0.2);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Basic styling for input fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color:rgba(43,130,36,0.2);
+
+}
+
+/* Optional: Add some styling to the added input fields */
+.added-input-container {
+    margin-top: 10px;
+}
+
+.added-input {
+    width: calc(50% - 5px);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.added-input-container input[type="button"] {
+    width: calc(50% - 5px);
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.added-input-container input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the delete button */
+.delete-button {
+    width: calc(50% - 5px);
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e74c3c; /* Red color for delete button */
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.delete-button:hover {
+    background-color: #c0392b; /* Darker red color on hover */
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.btn {
+    margin-left: 10px;
+    background-color: rgba(26, 109, 33,0.3);
+    border-radius: 10px;
+    height: 35px;
+    cursor: pointer;
+    
+}
+.side{
+    width: 30%;
+    margin-top: 105px;
+    margin-left: -69px;
+}
+.form{
+    margin-top: 125px;
+    margin-left: -777px;
+}
+::placeholder {
+    color: #fff;
+}
+.logo{
+    width: 80px;
+    height: 80px;
+    margin-top: 40px;
+    margin-left: 10px;
+    z-index: -1;
+    display: inline-block;
+}
+.nav{
+    margin-top: 10px;
+    margin-left: 518px;
+    height: 100px;
+}
+.submit {
+    background-color: rgba(26, 109, 33, 0.5); /* Initial background color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgba(26, 109, 33, 0.8); /* Change the background color on hover */
+}

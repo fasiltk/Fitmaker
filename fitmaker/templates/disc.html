@@ -1,0 +1,62 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/Diabetes.css' %}">
+</head>
+<body>
+    <div>
+        <img src="../static/img/logo.png" alt="logo" class="logo">
+      </div>
+        <div class="nav">
+        <a href="{%url 'inputpage'%}"><button class="btn">Input page</button></a>
+        <a href="{%url 'diseases'%}"><button class="btn">Diseases</button></a>
+        <a href="{% url 'patients' %}"><button class="btn">Patients</button></a>
+        <a href="{%url 'change_password'%}"><button class="btn">change password</button></a>
+        <a href="{% url 'logout' %}"><button class="btn">Log out</button></a>
+    </div>
+
+    <h2>Exercise Guidelines for Disc Patients</h2>
+
+<table border="1">
+    <tr>
+        <th>Type of Exercise</th>
+        <th>Can Do</th>
+        <th>Cannot Do</th>
+    </tr>
+    <tr>
+        <td>Low-Impact Aerobic Exercise</td>
+        <td>Walking, swimming, stationary cycling</td>
+        <td>High-impact activities (running, jumping)</td>
+    </tr>
+    <tr>
+        <td>Core Strengthening Exercises</td>
+        <td>Pelvic tilts, gentle abdominal exercises</td>
+        <td>Sit-ups, double leg raises</td>
+    </tr>
+    <tr>
+        <td>Flexibility and Stretching</td>
+        <td>Gentle stretching of the spine and hamstrings</td>
+        <td>Excessive or forceful twisting</td>
+    </tr>
+    <tr>
+        <td>Strength Training</td>
+        <td>Light weights, focusing on good form</td>
+        <td>Heavy lifting, improper form</td>
+    </tr>
+    <tr>
+        <td>Yoga and Pilates</td>
+        <td>Modified poses with proper alignment</td>
+        <td>Deep forward bends, full twists</td>
+    </tr>
+    <tr>
+        <td>Cardiovascular Exercise</td>
+        <td>Low-impact activities for cardiovascular health</td>
+        <td>Prolonged high-impact activities</td>
+    </tr>
+</table>
+</body>
+</html>

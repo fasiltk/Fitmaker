@@ -1,0 +1,83 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/outputpage.css' %}">
+</head>
+
+<body>
+    <div>
+        <img src="../static/img/logo.png" alt="logo" class="logo">
+    </div>
+    <div class="nav">
+        <a href="{%url 'inputpage'%}"><button class="btn">Input page</button></a>
+        <a href="{%url 'diseases'%}"><button class="btn">Diseases</button></a>
+        <a href="{% url 'patients' %}"><button class="btn">Patients</button></a>
+        <a href="{%url 'change_password'%}"><button class="btn">change password</button></a>
+        <a href="{% url 'logout' %}"><button class="btn">Log out</button></a>
+        <a href="{% url 'demo' %}"><button class="btn">Exercise Demo</button></a>
+
+    </div>
+    <div class="full">
+        <div class="calorie">
+            <table border="1">
+                <tr>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Calorie</th>
+                </tr>
+                {% for food_item, quantity, cal in user_data %}
+                <tr>
+                    <td>{{ food_item }}</td>
+                    <td>{{ quantity }}</td>
+                    <td>{{ cal }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td>{{ total }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="text">
+            An ideal daily intake of calories varies depending on age, metabolism and levels of physical activity, among other things. 
+            Generally, the recommended daily calorie intake is 2,000 calories a day for women and 2,500 for men.
+        </div>
+        <div class="exercise">
+            <h2>Exercise Recommendations</h2>
+            <table border="1">
+                <tr>
+                    <th>Recommended Activity</th>
+                    <th>Exercise time (in hr)</th>
+                </tr>
+                {% for activity,a in ex1 %}
+                <tr>
+                    <td>{{ activity}}</td>
+                    <td>{{a}}</td>
+                </tr>
+                {% endfor %}
+                {% for activityy,b in ex2 %}
+                <tr>
+                    <td>{{ activityy}}</td>
+                    <td>{{b}}</td>
+                </tr>
+                {% endfor %}
+                {% for activityyy,c in ex3 %}
+                <tr>
+                    <td>{{ activityyy}}</td>
+                    <td>{{c}}</td>
+                </tr>
+                {% endfor %}
+                {% for activityyyy,d in ex4 %}
+                <tr>
+                    <td>{{ activityyyy}}</td>
+                    <td>{{d}}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
